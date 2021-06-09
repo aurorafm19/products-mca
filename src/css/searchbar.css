@@ -1,0 +1,29 @@
+.searchbar {
+    position: absolute;
+    right: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0;
+    background-color: #0088BE;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.searchbar-input {
+    border-radius: 10px;
+    border: 1px solid #0088BE;
+    padding: 5px;
+    text-align: center;
+    width: 300px;
+}
+
+.close-icon {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    font-size: 18px;
+    color: #0088BE;
+}
