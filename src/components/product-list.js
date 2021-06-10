@@ -21,7 +21,6 @@ export default class ProductList extends Component {
 
   componentDidMount() {
     getProductlist()
-      .then((response) => response.json())
       .then((data) => this.setState({ products: data }));
   }
 
@@ -29,7 +28,7 @@ export default class ProductList extends Component {
     const { products } = this.state;
     return (
       <div className="product-list">
-        <Searchbar onChange={this.getSearchValue} />
+        {/* <Searchbar onChange={this.getSearchValue} /> */}
         <div className="products-card-container">
           {products?.map((product, key) => {
             return <ProductCard product={product} key={key}/>;

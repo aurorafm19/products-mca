@@ -12,6 +12,13 @@
     font-weight: 500;
     color: #0088BE;
 }
+.header-count {
+    position:absolute;
+    right: 20px;
+    top: 15px;
+    color: red;
+}
+
 .header-icon {
     font-size: 20px;
     color: #0088BE;
