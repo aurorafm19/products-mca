@@ -5,7 +5,7 @@ import "../css/product-card.css";
 export default class ProductCard extends Component {
     render() {
     return (
-      <Link to={`/${this.props.product.id}`} className="product-card">
+      <Link to={`/${this.props.product.id}`} className="product-card card">
         <img
           className="product-card-image"
           src={this.props.product.imgUrl}

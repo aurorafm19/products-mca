@@ -13,12 +13,3 @@ export function getProductDetail(id) {
 export function addProduct(product) {
     fetch(`${apiUrl}/cart`, {method: 'POST', headers, body: JSON.stringify(product)} )
 }
-
-export function filterBySearchValue(searchValue, productList) {
-    let productsFiltered = [];
-    if (searchValue.length > 0) {
-        productsFiltered = productList.filter(product =>product.brand === searchValue || product.model === searchValue )
-    }
-
-    return productsFiltered;
-}

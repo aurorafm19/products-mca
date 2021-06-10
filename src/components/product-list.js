@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Searchbar from "../components/searchbar";
 import ProductCard from "../components/product-card";
 import "../css/product-list.css";
-import { getProductlist, filterBySearchValue } from "../services/products";
+import { getProductlist } from "../services/products";
+import {filterBySearchValue} from '../helpers/filter';
 
 export default class ProductList extends Component {
   state = {
