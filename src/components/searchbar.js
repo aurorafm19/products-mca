@@ -3,24 +3,27 @@ import { MdClose, MdSearch } from "react-icons/md";
 import "../css/searchbar.css";
 
 export default class Searchbar extends Component {
+  constructor (props) {
+    super(props)
 
-    state = {
-        searchValue: ''
+    this.state = {
+      searchValue: ''
     }
+  }
+
     
     handleChange = (event) => {
-        this.setState({searchValue: event.target.value});
+      if (this.props.onChange) {
+          this.setState({searchValue:event.target.value}, () => {this.updateState()});
+      }
+    }
+
+    updateState() {
+      this.props.onChange(this.state);
     }
 
     resetSearchValue = () => {
-        this.setState({searchValue: ''})
-    }
-    
-    
-    componentDidUpdate() {
-        if (this.props.onChange) {
-            this.props.onChange(this.state);
-        }
+        this.setState({searchValue: ''}, () => {this.updateState()});
     }
 
   render() {

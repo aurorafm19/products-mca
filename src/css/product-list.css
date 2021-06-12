@@ -1,10 +1,23 @@
 .product-list {
-    display: flex;
-    margin: 0 20px;
+  display: flex;
+  margin: 0 20px;
 }
 
 .products-card-container {
-    display: flex;
-    flex-flow: row wrap;
-    margin:100px 0 50px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 100px 0 50px;
+}
+
+.not-found-products {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  font-size: 32px;
+}
+
+.not-found-icon {
+  margin-bottom: 10px;
+  font-size: 48px;
 }
