@@ -104,7 +104,7 @@ export default class ProductDetail extends Component {
             </ul>
           </div>
           <div className="product-detail-actions card">
-            <div class="actions">
+            <div className="actions">
               <select onChange={this.onSelectColor}>
                 {options?.colors?.map((color, key) => {
                   return (
