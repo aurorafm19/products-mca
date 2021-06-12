@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render the component when price and model/brand dont exist 1`] = `
+<div>
+  <a
+    class="product-card card"
+    href="/product/ke-gsQbO8qH9PQ-zcdiAJ"
+  >
+    <img
+      alt="mobile"
+      class="product-card-image"
+    />
+    <div
+      class="product-card-content"
+    >
+      <div
+        class="product-card-not-info"
+      >
+        not info available
+      </div>
+      <div
+        class="product-card-not-info"
+      >
+        not info available
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
+exports[`renders the component 1`] = `
+<div>
+  <a
+    class="product-card card"
+    href="/product/ke-gsQbO8qH9PQ-zcdiAJ"
+  >
+    <img
+      alt="mobile"
+      class="product-card-image"
+    />
+    <div
+      class="product-card-content"
+    >
+      <div
+        class="product-card-title"
+      >
+        Liquid Zest plus
+        -
+        Acer
+      </div>
+      <div
+        class="product-card-desc"
+      >
+        200
+        $
+      </div>
+    </div>
+  </a>
+</div>
+`;

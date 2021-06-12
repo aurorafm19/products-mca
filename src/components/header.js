@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import "../css/header.css";
 import Breadcrumbs from "./breadcrumbs";
+import {getItemInStorage} from '../helpers/storage';
 
 export default class Header extends Component {
   render() {
-    const count = localStorage.getItem("count")?.toString();
+    const count = getItemInStorage("count");
     return (
       <div>
         <header className="header">

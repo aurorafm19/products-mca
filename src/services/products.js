@@ -1,3 +1,5 @@
+import {setItemInStorage} from '../helpers/storage';
+import {HOUR_EXPIRATION} from '../constants';
 const apiUrl = 'https://front-test-api.herokuapp.com/api/';
 const headers = { 'Content-Type': 'application/json' };
 
@@ -25,5 +27,5 @@ export function addProduct(id, color, storage) {
     body: JSON.stringify({ id, colorCode: color, storageCode: storage }),
   })
     .then((response) => response.json())
-    .then((data) => localStorage.setItem('count', data.count));
+    .then((data) => setItemInStorage('count', data.count, HOUR_EXPIRATION));
 }

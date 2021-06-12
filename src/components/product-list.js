@@ -34,6 +34,7 @@ export default class ProductList extends Component {
       this.state.searchValue,
       this.state?.products
     );
+
     this.setState({ products: productsFiltered });
   }
 

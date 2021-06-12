@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component and shows just Home value 1`] = `
+<div>
+  <div
+    class="breadcrumbs"
+  >
+    <a
+      class="breadcrumbs"
+      href="/"
+    >
+      Home
+    </a>
+    <div />
+  </div>
+</div>
+`;

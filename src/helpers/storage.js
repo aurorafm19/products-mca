@@ -18,7 +18,6 @@ export function getItemInStorage(key) {
 
     const data = JSON.parse(item);
     const dateNow = new Date();
-    console.log(dateNow.getTime())
 
     if (dateNow.getTime() > data.expiration ) {
         localStorage.removeItem(key);
