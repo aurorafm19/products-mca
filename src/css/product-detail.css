@@ -74,6 +74,7 @@ select {
         margin-left: 0;
     }
 }
+
 @media (max-width: 600px) {
     ul {
         display: flex;

@@ -25,6 +25,14 @@
 }
 
 .breadcrumbs {
+    display: flex;
     margin: 10px;
     font-size: 12px;
+    text-decoration: none;
+    color: #232323;
+}
+
+.is-detail {
+    margin-left: -5px;
+    cursor: default;
 }
