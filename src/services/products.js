@@ -1,31 +1,15 @@
-import {setItemInStorage} from '../helpers/storage';
-import {HOUR_EXPIRATION} from '../constants';
+import axios from 'axios';
+
 const apiUrl = 'https://front-test-api.herokuapp.com/api/';
-const headers = { 'Content-Type': 'application/json' };
 
 export function getProductlist() {
-  return fetch(`${apiUrl}product`, {
-    method: 'GET',
-    headers,
-  }).then((response) => response.json());
+  return axios.get(`${apiUrl}product`);
 }
 
 export function getProductDetail(id) {
-  return fetch(`${apiUrl}product/${id}`, {
-    method: 'GET',
-    headers,
-  }).then((response) => response.json());
+  return axios.get(`${apiUrl}product/${id}`);
 }
 
 export function addProduct(id, color, storage) {
-  fetch(`${apiUrl}cart`, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ id, colorCode: color, storageCode: storage }),
-  })
-    .then((response) => response.json())
-    .then((data) => setItemInStorage('count', data.count, HOUR_EXPIRATION));
+  return axios.post(`${apiUrl}cart`, { id, colorCode: color, storageCode: storage });
 }

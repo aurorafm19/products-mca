@@ -49,9 +49,12 @@ export default class ProductList extends Component {
   }
 
   getProducts() {
-    getProductlist().then((data) => {
-      this.setState({ products: data });
-      setItemInStorage("products", data, HOUR_EXPIRATION);
+    getProductlist().then((response) => {
+      this.setState({ products: response.data });
+      setItemInStorage("products", response.data, HOUR_EXPIRATION);
+    })
+    .catch(() => {
+      this.setState({products: []});
     });
   }
 

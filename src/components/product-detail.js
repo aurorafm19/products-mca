@@ -1,23 +1,24 @@
-import React, { Component } from "react";
-import "../css/product-detail.css";
-import { getProductDetail, addProduct } from "../services/products";
-
-import { MdAddShoppingCart } from "react-icons/md";
+import React, { Component } from 'react';
+import { MdAddShoppingCart } from 'react-icons/md';
+import { HOUR_EXPIRATION } from '../constants';
+import '../css/product-detail.css';
+import { setItemInStorage } from '../helpers/storage';
+import { addProduct, getProductDetail } from '../services/products';
 
 export default class ProductDetail extends Component {
   state = {
     details: {},
-    colorSelected: "",
-    storageSelected: "",
+    colorSelected: '',
+    storageSelected: '',
     id: this.props.match.params.id,
   };
 
   componentDidMount() {
-    getProductDetail(this.state.id).then((data) =>
+    getProductDetail(this.state.id).then((response) =>
       this.setState({
-        details: data,
-        colorSelected: data.options.colors[0].code,
-        storageSelected: data.options.storages[0].code,
+        details: response.data,
+        colorSelected: response.data.options.colors[0].code,
+        storageSelected: response.data.options.storages[0].code,
       })
     );
   }
@@ -36,7 +37,11 @@ export default class ProductDetail extends Component {
       this.state.id,
       this.state.colorSelected,
       this.state.storageSelected
-    );
+    )
+      .then((response) => {
+        setItemInStorage('count', response.data.count, HOUR_EXPIRATION);
+      })
+      .catch({});
   };
 
   render() {
@@ -91,7 +96,7 @@ export default class ProductDetail extends Component {
                 {battery}
               </li>
               <li>
-                <span>Cameras: primary-</span> {primaryCamera}{" "}
+                <span>Cameras: primary-</span> {primaryCamera}
                 <span>secondary-</span> {secondaryCmera}
               </li>
               <li>
@@ -99,7 +104,7 @@ export default class ProductDetail extends Component {
                 {dimentions}
               </li>
               <li>
-                <span>weight:</span> {weight}{" "}
+                <span>weight:</span> {weight}
               </li>
             </ul>
           </div>
