@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { MdClose, MdSearch } from "react-icons/md";
+import { SEARCHBAR_PLACEHOLDER } from '../constants';
 import "../css/searchbar.css";
 
 export default class Searchbar extends Component {
@@ -30,8 +31,8 @@ export default class Searchbar extends Component {
     return (
       <div className="searchbar">
         <MdSearch className="search-icon"/>
-        <input className="searchbar-input" type="text" placeholder="search" value={this.state.searchValue} onChange={this.handleChange} />
-        <MdClose className="close-icon" onClick={this.resetSearchValue}/>
+        <input className="searchbar-input" type="text" placeholder={SEARCHBAR_PLACEHOLDER} value={this.state.searchValue} onChange={this.handleChange} />
+        <MdClose className="close-icon" data-testid="close-button" onClick={this.resetSearchValue}/>
       </div>
     );
   }

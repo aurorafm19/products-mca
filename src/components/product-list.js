@@ -14,8 +14,6 @@ export default class ProductList extends Component {
     searchValue: "",
   };
 
-  oneHur = 3600000;
-
   getSearchValue = (data) => {
     if (!data.searchValue) {
       this.setState({ searchValue: data.searchValue }, () => {
@@ -66,7 +64,7 @@ export default class ProductList extends Component {
     const { products } = this.state;
     return (
       <div className="product-list">
-        <Searchbar onChange={this.getSearchValue} />
+        <Searchbar  onChange={this.getSearchValue} />
         {products.length ? (
           <div className="products-card-container">
             {products.map((product, key) => {
