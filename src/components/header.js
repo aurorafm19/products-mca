@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import "../css/header.css";
+import { getItemInStorage } from '../helpers/storage';
 import Breadcrumbs from "./breadcrumbs";
-import {getItemInStorage} from '../helpers/storage';
 
 export default class Header extends Component {
   render() {

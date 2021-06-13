@@ -48,11 +48,14 @@ select {
 }
 
 .product-detail-add-button {
+    display: flex;
+    justify-content: space-around;
     margin-top: 20px;
     background-color: transparent;
     border: 1px solid  #0088BE;
     padding: 5px;
     width: 150px;
+    cursor: pointer;
 }
 
 .product-detail-add-button:hover {

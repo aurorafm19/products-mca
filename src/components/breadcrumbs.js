@@ -1,6 +1,6 @@
-import React,{ Component } from 'react';
+import React, { Component } from 'react';
+import { PRODUCT_DETAIL_BREADCRUMB } from '../constants';
 import '../css/header.css';
-import {PRODUCT_DETAIL_BREADCRUMB} from '../constants';
 
 export default class Breadcrumbs extends Component {
     render() {
